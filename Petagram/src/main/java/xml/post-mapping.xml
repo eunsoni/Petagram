@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.PostDAO">
+
+	<insert id="insertPost" parameterType="hashmap"
+		useGeneratedKeys="true" keyProperty="postId" keyColumn="postid">
+		INSERT INTO
+		petagramdb.post (title, content, regdate, memberid)
+		VALUES (#{title},
+		#{content}, now(), #{memberId})
+	</insert>
+
+	<insert id="insertImage" parameterType="hashmap">
+		INSERT INTO image (src,
+		postid)
+		VALUES (#{src}, #{postId})
+	</insert>
+
+	<insert id="saveImageFilename1" parameterType="hashmap">
+		INSERT INTO image
+		(src, postid)
+		VALUES (#{src}, #{postId})
+	</insert>
+
+	<select id="selectPostId" resultType="int"
+		parameterType="dto.PostDTO2">
+		select postid from petagramdb.post order by regdate DESC
+		limit 0,1
+	</select>
+
+	<insert id="registerPost" parameterType="dto.PostDTO2"
+		useGeneratedKeys="true" keyProperty="postId" keyColumn="postid"> INSERT INTO
+		petagramdb.post (title, content, regdate) VALUES (#{title},
+		#{content}, now())
+	</insert>
+
+	<!-- 게시글 수정 페이지 -->
+	<!-- 게시글 하나 조회 -->
+	<select id="getPostById" resultType="dto.PostDTO2"
+		parameterType="int"> SELECT title,content FROM petagramdb.post WHERE postid
+		= #{postId}
+	</select>
+	<!-- 이미지 이름 조회 -->
+	<select id="getImageFilename" parameterType="Int"
+		resultType="String"> SELECT i.src FROM petagramdb.image i INNER JOIN
+		petagramdb.post p ON i.postid = p.postid WHERE i.postid = #{postId}
+		LIMIT 1
+	</select>
+	<!-- 게시글 하나 조회 -->
+	<select id="getPostById4" resultType="dto.PostDTO4"
+		parameterType="int"> SELECT title,content FROM petagramdb.post WHERE postid
+		= #{postId}
+	</select>
+	<!-- 게시글 수정 -->
+	<update id="updatePost" parameterType="dto.PostDTO2"> UPDATE petagramdb.post
+		SET title = #{title}, content = #{content}, regdate = now() WHERE
+		postid = #{postId}
+	</update>
+	<!-- 이미지 업로드 쿼리 -->
+	<update id="UpdateImage" parameterType="hashmap"> UPDATE petagramdb.image
+		SET src = #{src} WHERE postid = #{postId}
+	</update>
+
+	<!-- 기존이미지 삭제 -->
+	<delete id="deleteoldImages" parameterType="int"> DELETE FROM
+		petagramdb.image WHERE postid = #{postId}; </delete>
+</mapper>

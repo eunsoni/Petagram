@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+.contents {
+	padding-top: 50px;
+	padding-left: 70px;	
+	margin-bottom: 50px;
+}
+
+.content {
+	float: left;
+	width: 45%;
+	height: 500px;
+	margin-bottom: 50px;
+}
+
+#search {
+	float: left;
+	margin-bottom: 30px;
+	width: 100%;
+}
+
+#map {
+	float: left;
+	width: 45%;
+	height: 520px;
+	margin-right: 6%;
+	margin-bottom: 50px;
+}
+
+#searchInput {
+	width: 95%;
+	height: 28px;
+	resize: none;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #EDE0D4;
+	box-shadow: 0 0 7px lightgray;
+	margin-right: 10px;
+}
+
+#searchBtn {
+	float: right;
+	text-align: center;
+	width: 75px;
+	height: 30px;
+	font-size: 15px;
+	font-weight: 550;
+	border-color: #EDE0D4;
+	background-color: #EDE0D4;
+	border-radius: 8px;
+	box-shadow: 3px 3px 3px lightgrey;
+	margin-top: 10px;
+	margin-right: 4%;
+}
+
+#showInfo {
+	float: inline-start;
+	width: 93%;
+	height: 395px;
+	background-color: EDE0D4;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #EDE0D4;
+	box-shadow: 0 0 7px lightgray;
+	overflow: scroll;
+	padding: 10px;
+}

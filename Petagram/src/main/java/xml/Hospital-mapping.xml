@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hospital">
+
+	<insert id="insertHospitalInfo" parameterType="hashmap">
+		insert into hospital values(#{hospitalName}, #{localAddr}, #{roadAddr}, #{longitude}, #{latitude})
+	</insert>
+	
+	<select id="selectDupl" resultType="int" parameterType="hashmap">
+		select count(*) from hospital where hospitalname = #{hospitalName} and localAddr = #{localAddr}
+	</select>
+	
+	<select id="selectAllCnt" resultType="int">
+		select count(*) from hospital
+	</select>
+	
+	<select id="selectByAddr" resultType="hospitaldto" parameterType="string">
+		select * from hospital where localAddr like concat("%", #{address}, "%") or roadAddr like concat("%", #{address}, "%")
+	</select>
+	
+</mapper>

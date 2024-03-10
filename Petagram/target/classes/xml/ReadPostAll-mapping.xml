@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="readpostall">
+	<select id="selectPosts" resultType="postdto">
+		select * from post order by
+		postId DESC
+		LIMIT #{pageSize} OFFSET #{offset}
+	</select>
+	<select id="selectMembers" resultType="memberdto">
+		select * from members
+	</select>
+	<select id="selectTotal" resultType="int">
+		SELECT COUNT(*) AS
+		totalPosts FROM post;
+	</select>
+	<select id="selectLikes" resultType="likedto"
+		parameterType="map">
+		SELECT * FROM likes where memberid = #{memberId};
+	</select>
+	<insert id="updateLikes" parameterType="map">
+		INSERT INTO likes
+		(memberid, postid) VALUES (#{memberId}, #{postId})
+	</insert>
+	<select id="likeExists" resultType="int" parameterType="map">
+		SELECT
+		count(*) FROM likes where memberid = #{memberId} AND postid =
+		${postId};
+	</select>
+	<delete id="deleteLikes" parameterType="map">
+		DELETE FROM likes WHERE
+		memberid = #{memberId} AND postid = #{postId}
+	</delete>
+	<select id="likeTotal" resultType="likedto">
+		SELECT * FROM likes;
+	</select>
+	<select id="imageTotal" resultType="imagedto">
+		SELECT * FROM image;
+	</select>
+	<!-- 마이페이지 관련 -->
+	<select id="getMyPost" resultType="postdto">
+		SELECT * FROM post where
+		memberid = #{memberId} order by postId DESC LIMIT #{postNumber};
+	</select>
+	<select id="getMyAllPost" resultType="postdto">
+		SELECT * FROM post where
+		memberid = #{memberId} order by postId DESC;
+	</select>
+	<select id="validatePw" resultType="int" parameterType="map">
+		SELECT
+		COUNT(*) FROM members where memberid = #{memberId} AND pw =
+		#{password};
+	</select>
+
+	<!-- 삭제 관련 -->
+	<delete id="deleteMember" parameterType="map">
+		DELETE FROM members
+		WHERE memberid = #{memberId};
+	</delete>
+	
+	<!-- Khuhyun's Code -->
+	<select id="selectAllNotice" resultType="informdto">
+ 		SELECT * FROM inform;
+ 	</select>
+
+	<insert id="updateNotice" parameterType="map">
+ 		INSERT INTO inform (title, textbox) 
+ 		VALUES(#{title}, #{textbox});
+ 	</insert>
+ 	
+ 	<delete id="deleteNotice" parameterType="map">
+ 		DELETE FROM inform WHERE informid = #{informId};
+ 	</delete>
+ 	<!-- Khuhyun's Code -->
+ 	
+ 	<!-- 추가된 내용(notice) -->
+ 	<select id="selectAuthority" resultType="boolean" parameterType="int">
+ 		SELECT authority FROM members WHERE memberid = #{memberId}; 
+ 	</select>
+</mapper>

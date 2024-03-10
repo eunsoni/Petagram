@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	<typeAliases>
+		<typeAlias type="dto.PostDTO" alias="postdto"/>
+		<typeAlias type="dto.CommentDTO" alias="commentdto"/>
+		<typeAlias type="dto.ImageDTO" alias="imagedto"/>
+		<typeAlias type="dto.HospitalDTO" alias="hospitaldto"/>
+		<typeAlias type="dto.MemberDTO" alias="memberdto"/>
+		<typeAlias type="dto.LikeDTO" alias="likedto"/>
+		<typeAlias type="dto.InformDTO" alias="informdto"/>
+		<typeAlias type="dto.HomeDTO" alias="homedto"/>
+	</typeAliases>
+</configuration>

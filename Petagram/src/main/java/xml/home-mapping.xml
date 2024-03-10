@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="home">
+ 	<select id="selectPostsHome" resultType="postdto">
+ 		SELECT * FROM post order by postId ASC
+ 		LIMIT #{pageSize} OFFSET #{offset};
+ 	</select>
+ 	
+ 	<select id="selectPopPosts" resultType="int">
+ 		SELECT postid FROM likes GROUP BY postid 
+ 		ORDER BY count(*) DESC LIMIT 5; 
+ 	</select>
+ 	
+ 	<select id="selectPopPosts2" resultType="postdto">
+ 		SELECT * FROM post WHERE postid IN (#{id1}, #{id2}, #{id3}, #{id4}, #{id5})
+ 		ORDER BY FIELD(postid, #{id1}, #{id2}, #{id3}, #{id4}, #{id5});
+ 	</select>
+ 	
+ 	
+ 	<!-- <select id="selectMembers" resultType="memberdto">
+ 		SELECT * FROM members; 
+ 	</select> -->
+ 	
+ 	<select id="selectTotalPosts" resultType="int">
+		SELECT COUNT(*) AS totalPosts FROM post;
+	</select>
+	
+	<!-- <select id="selectLikes" resultType="likedto" parameterType="map">
+		SELECT * FROM likes where memberid = #{memberId};
+	</select> -->
+	
+	<!-- <insert id="updateLike" parameterType="map">
+    INSERT INTO likes (memberid, postid) VALUES (#{memberId}, #{postId});
+	</insert> -->
+	
+	<!-- <select id="likeExists" resultType="int" parameterType="map">
+		SELECT count(*) FROM likes where memberid = #{memberId} AND postid = #{postId};
+	</select> -->
+	
+	<!-- <delete id="deleteLike" parameterType="map">
+    	DELETE FROM likes WHERE memberid = #{memberId} AND postid = #{postId}
+	</delete> -->
+	
+	<!-- <select id="likeTotal" resultType="likedto">
+		SELECT * FROM likes;
+	</select>
+	
+	<select id="imageTotal" resultType="imagedto">
+		SELECT * FROM image;
+	</select> -->
+	
+	<select id="imageOne" resultType="string" parameterType="int">
+		SELECT src FROM image WHERE postid = #{postId};
+	</select>
+ 
+ 
+ </mapper>

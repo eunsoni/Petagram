@@ -1,0 +1,142 @@
+@charset "UTF-8";
+#informlist{
+	background-color: #fcf3ea;
+	width: 60%;
+	min-width: 550px;
+	height: 1000px;
+	margin: 30px auto;
+	border: 0px;
+	border-radius: 20px;
+	overflow: auto;
+}
+
+#title{
+	display: inline-block;
+	margin: 0 0;
+	margin-left: 35%;
+	width: 30%;
+	height: 100px;
+	color: #7F5539;
+	/*font-style: oblique;
+	text-decoration: underline #000000;*/
+	text-align: center;
+	line-height: 100px;
+}
+
+.bullet{
+	float: left;
+	background-color: #E6CCB2;
+	width: 70px;
+	height: 26px;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 30px;
+	text-align: center;
+	margin-left: 5%;
+	border: 3px solid #7F5539;
+	border-radius: 10px;
+}
+
+.subtitle{
+	font-size: 16px;
+	font-weight: bold;
+	text-align: left;
+	line-height: 30px;
+	margin-left: 1.5%;
+}
+
+.deletebtn{
+	float: right;
+	background-color: #fcf3ea;
+	margin-right: 12%;
+	width: 50px;
+	height: 30px;
+	font-size: 14px;
+	color: gray;
+	line-height: 15px;
+	text-align: center;
+	border: 2px solid #fcf3ea;
+	border-radius: 5px;
+}
+.deletebtn:hover{
+	cursor: pointer;
+}
+
+.textbox{
+	background-color: #FFFFFF;
+	margin: 15px auto;
+	margin-left: 15%;
+	margin-right: 12%;
+	width: 70%;
+	min-height: 20%;
+	border: 2px solid #7F5539;
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 16px;
+}
+
+#writeInform{
+	float: right;
+	font-weight: bold;
+	background-color: #EDE0D4;
+	height: 30px;
+	margin-top: 3%;
+	margin-right: 5%;
+	/*margin: 3% 5%;*/
+	border: 2px solid #EDE0D4;
+	border-radius: 5px;
+	box-shadow: 1px 3px 5px darkgrey;
+
+}
+#writeinform:hover{
+	cursor: pointer;
+}
+
+#modal{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, .7);
+}
+
+#modalbody{
+	width: 500px;
+	height: 500px;
+	margin: 30% auto;
+	border: 10px solid #7F5539;
+	border-radius: 10px;
+	background-color: #FFFFFF;
+} 
+
+#enroll:hover{
+	cursor: pointer;
+}
+
+#closebtn{
+	float: right;
+	font-size: 25px;
+	padding-right: 10px;
+}
+#closebtn:hover{
+	cursor: pointer;
+}
+
+#textTitle{
+	width: 480px;
+	height: 20px;
+	margin: 10px 7px;
+	margin-top: 20px;
+	font-size: 16px;
+}
+
+#text{
+	width: 480px;
+	height: 380px;
+	margin: 10px 7px;
+	margin-top: 0px;
+}

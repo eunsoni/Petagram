@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="readpostone">
+	<select id="selectPostDetail" resultType="postdto" parameterType="int">
+		select * from post where postid = #{postid}
+	</select>
+	
+	<select id="selectMemberName" resultType="String" parameterType="int">
+		select membername from members where memberid = #{memberid}
+	</select>
+	
+	<select id="selectComment" resultType="commentdto" parameterType="int">
+		select commentid, content from comments where postid = #{postid}
+	</select>
+	
+	<select id="selectImage" resultType="imagedto" parameterType="int">
+		select * from image where postid = #{postid}
+	</select>
+	
+	<insert id="insertComment" parameterType="hashmap">
+		insert into comments(content, memberid, postid) values(#{content}, #{memberId}, #{postId})
+	</insert>
+	
+	<delete id="deleteComment" parameterType="int">
+		delete from comments where commentid = #{commentid}
+	</delete>
+	
+	<select id="selectLike" resultType="int" parameterType="hashmap">
+		select count(*) from likes where postId = #{postId} and memberId = #{memberId}
+	</select>
+	
+	<delete id="deleteLike" parameterType="hashmap">
+		delete from likes where postId = #{postId} and memberId = #{memberId}
+	</delete>
+	
+	<insert id="insertLike" parameterType="hashmap">
+		insert into likes values(#{memberId}, #{postId})
+	</insert>
+	
+	<select id="selectLikeAll" resultType="int" parameterType="int">
+		select count(*) from likes where postId = #{postId}
+	</select>
+
+	<delete id="deletePost" parameterType="int">
+		delete from post where postId = #{postId}
+	</delete>
+</mapper>

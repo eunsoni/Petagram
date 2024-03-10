@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+#logo {
+	margin-left: 5%;
+}
+
+.btn {
+	width: 100px;
+	height: 30px;
+	float: right;
+	font-size: 16px;
+	font-weight: bold;
+	background-color: white;
+	float: right;
+	margin-right: 45px;
+	margin-top: 70px;
+	border-radius: 8px;
+	box-shadow: 1px 3px 5px darkgrey;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+h2 {
+	text-align: center;
+	color: #7F5539;
+}
+
+h3 {
+	color: #B08968;
+}
+
+#input_form {
+	align: center;
+	margin: auto;
+	position: auto;
+	top: 20%;
+	align-self: center;
+	width: 650px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	border-radius: 30px;
+	background-color: #fcf3ea;
+}
+
+#textForm>input {
+	width: 400px;
+	height: 30px;
+	box-shadow: 0 0 7px lightgray;
+	border-color: #EDE0D4;
+}
+
+#petFormsContainer>input {
+	width: 400px;
+	height: 30px;
+	box-shadow: 0 0 7px lightgray;
+	border-color: #EDE0D4;
+}
+
+#join_btn {
+	margin-top: 40px;
+	text-align: center;
+	width: 100px;
+	height: 35px;
+	font-size: 15px;
+	font-weight: 550;
+	border-color: #EDE0D4;
+	background-color: #EDE0D4;
+	border-radius: 8px;
+	box-shadow: 3px 3px 3px lightgrey;
+	margin-left: 90px;
+}
+
+#btns {
+	padding-left: 28%;
+}
+
+#textForm {
+	position: auto;
+	width: 300px;
+	padding-left: 130px;
+}

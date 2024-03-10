@@ -1,0 +1,29 @@
+@charset "UTF-8";
+#menu{
+	margin: 0px auto;
+	height: 50px;
+	box-shadow: 3px 10px 5px darkgrey;
+}
+#menu menu{
+	padding: 0;
+	margin: 0;
+}
+#menu li{
+	background-color: #DDB892;
+	width: 25%;
+	list-style: none;
+	float: left;
+	text-align: center;
+	line-height: 50px;
+}
+#menu li:hover{
+	background-color: #EDE0D4;
+	box-shadow: 3px 10px 5px lightgrey;
+	transition-duration: 1s;
+}
+#menu a{
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #7F5539;
+	text-decoration: none;
+}

@@ -1,0 +1,128 @@
+@charset "UTF-8";
+.allElement {
+	text-align: center;
+	padding-left: 10%;
+}
+
+#postBody {
+	background-color: #fcf3ea;
+	width: 80%;
+	height: 80%;
+	margin-top: 50px;
+	margin-bottom: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	border-radius: 20px;
+	box-shadow: 3px 10px 5px lightgrey;
+}
+
+#postTitle {
+	text-align: left;	
+} 
+
+#info {
+	text-align: left;
+}
+
+#postContent {
+	background-color: white;
+	border: 2px solid #fcf3ea;
+	border-radius: 10px;
+	box-shadow: 3px 10px 5px lightgrey;
+	
+	width: 90%;
+	height: 90%;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding: 20px;
+	text-align: left;
+}
+
+#btns {
+	margin: 0 auto;
+	text-align: left;
+}
+
+#btns #likeBtn{
+	background-color: white;
+	border: 2px solid lightgrey;
+	border-radius: 10px;
+	width: 80px;
+}
+
+#btns #likeBtn img{
+	 width:15px;
+	 height:15px;
+	 margin: 0 auto;
+}
+
+#btns #share{
+	background-color: white;
+	border: none;
+}
+
+#btns #share img{
+	 width:16px;
+	 height:16px;
+}
+
+#commentDiv {
+	text-align: left;
+}
+
+#inputComment {
+	width: 85%;
+	margin-right: 20px;
+}	
+
+#commentDiv #postBtn {
+	background-color: #fcf3ea;
+	border: 2px solid #fcf3ea;
+	border-radius: 10px;
+	width: 80px;
+	box-shadow: 3px 3px 3px lightgrey;
+}
+
+#commentDiv #showComment{
+	background-color: #fcf3ea;
+	width: 80%;
+	height: 80%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	border-radius: 10px;
+	border: 2px solid #fcf3ea;
+	box-shadow: 3px 10px 5px lightgrey;
+}
+
+.option {
+	display : none;
+	float: right;
+  	z-index : 1;
+}
+
+.optionBtn {
+	display: block;
+	background-color: #EDE0D4;
+	border: 3px solid #EDE0D4;
+	border-radius: 5px;
+}
+
+.moreHoriz:hover .option{
+	display: block;
+}
+
+.moreHorizBtn {
+	float:right;
+	background-color: #fcf3ea;
+	border: 2px solid #fcf3ea;
+}
+
+
